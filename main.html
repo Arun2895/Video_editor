@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muonium Editor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #2b2b2b;
+            color: #e6e6e6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background-color: #333;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        h1 {
+            color: #f98c24;
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Fira Code', monospace;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        p.description {
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #bbb;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .function-section {
+            background-color: #222;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .function-section img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            animation: fadeInZoom 0.8s ease-in-out;
+        }
+
+        .function-section h2 {
+            color: #f98c24;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+
+        .function-section p {
+            font-size: 1.2em;
+            color: #bbb;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #f98c24;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #e37916;
+        }
+
+        .section-header {
+            font-size: 2.5em;
+            color: #f98c24;
+            text-align: center;
+            margin: 60px 0 40px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInZoom {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .about-section {
+            background-color: #1c1c1c;
+            padding: 40px;
+            border-radius: 10px;
+            color: #bbb;
+            margin-bottom: 40px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .about-section h2 {
+            font-size: 2.5em;
+            color: #f98c24;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Muonium Editor</h1>
+        <p class="description">
+            A powerful, intuitive, and efficient video editing tool designed to meet all your media manipulation needs. 
+            Use our editor to merge, split, or enhance your video files with just a few clicks. No downloads required!
+        </p>
+
+        <div class="about-section">
+            <h2>About Muonium Editor</h2>
+            <p>
+                Muonium Editor is designed to simplify your video editing workflow. Whether you're a professional or a beginner, 
+                this tool offers easy-to-use functionalities like merging video files, increasing resolution, splitting audio and video, 
+                and trimming clips to create the perfect final product. All tools are pre-installed and ready to use.
+            </p>
+        </div>
+
+        <h2 class="section-header">Editing Functions</h2>
+
+        <!-- Merge Video -->
+        <div class="function-section">
+            
+            <h2>Merge Video</h2>
+            <p>Merge multiple video files into one seamless video. Perfect for combining clips from different sources into a single, polished output.</p>
+            <button class="button" onclick="applyFunction('merge_video')">Apply Merge Video</button>
+        </div>
+
+        <!-- Increase Resolution -->
+        <div class="function-section">
+            
+            <h2>Increase Resolution</h2>
+            <p>Enhance video resolution for higher-quality playback, ensuring the best visual experience for your viewers.</p>
+            <button class="button" onclick="applyFunction('increase_resolution')">Apply Increase Resolution</button>
+        </div>
+
+        <!-- Split Video and Audio -->
+        <div class="function-section">
+            
+            <h2>Split Video and Audio</h2>
+            <p>Separate audio and video tracks from a media file, allowing you to edit them independently for greater creative control.</p>
+            <button class="button" onclick="applyFunction('split_audio_video')">Apply Split</button>
+        </div>
+
+        <!-- Trim Video -->
+        <div class="function-section">
+            
+            <h2>Trim Video</h2>
+            <p>Trim unwanted segments of your video to focus on the most important parts, giving you a clean and concise final result.</p>
+            <button class="button" onclick="applyFunction('trim_video')">Apply Trim Video</button>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2024 Muonium Editor. All Rights Reserved.
+    </footer>
+
+    <script>
+        function applyFunction(funcName) {
+            fetch(`/apply-function`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ function: funcName }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Function applied:', funcName);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
